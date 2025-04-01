@@ -20,7 +20,7 @@ const getHumidityColor = (value: number): string => {
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false }) as unknown as React.FC<{
     type: string;
     options: ApexOptions;
-    series: number[];
+    series: any; // Allow both number[] and ApexAxisChartSeries
     height?: number;
   }>;
   interface SensorChartProps {
@@ -153,7 +153,12 @@ export function DhtHumidityGauge() {
 
   return (
     <div className="bg-white rounded shadow p-6">
-      <Chart type="radialBar" options={options} series={[humidity]} height={300} />
+<Chart
+  type="radialBar"
+  options={options}
+  series={[humidity]} // ✅ instead of [{ name: "Humidity", data: [humidity] }]
+  height={300}
+/>
     </div>
   );
 }
