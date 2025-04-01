@@ -1,103 +1,103 @@
+import SensorChart, {
+  DhtHumidityGauge,
+  MoistureGauge,
+} from "@/components/SensorChart";
+import { FaThermometerHalf } from "react-icons/fa";
+import { FaDroplet } from "react-icons/fa6";
+import { FaLeaf } from "react-icons/fa";
+import { FaArrowsRotate } from "react-icons/fa6";
+
 import Image from "next/image";
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="min-h-screen p-8 bg-gray-100">
+      <header className="bg-white rounded-b-lg shadow-md">
+        <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
+          <a className="block text-teal-600" href="#">
+            <span className="sr-only">Home</span>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/BitLeafGreenLogo.png"
+              alt="BitLeaf Logo"
+              width={100}
+              height={100}
+              className="h-auto w-auto"
             />
-            Deploy now
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+
+          <div className="flex flex-1 items-center justify-end md:justify-between">
+            <nav aria-label="Global" className="hidden md:block">
+            <ul className="flex items-center gap-6 text-sm">
+          <li>
+            <a className="text-gray-500 transition hover:text-gray-500/75"> Monitoring Dashboard </a>
+          </li>
+          </ul>
+
+            </nav>
+
+            <div className="flex items-center gap-4">
+              <div className="sm:flex sm:gap-4">
+                <a
+                  className="block rounded-md bg-[#1E6E47] px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
+                  href="/"
+                >
+                   <FaArrowsRotate className="w-5 h-5 text-white-500" />
+                </a>
+              </div>
+
+              <button className="block rounded-sm bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
+                <span className="sr-only">Toggle menu</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </header>
+      <br />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="flex flex-col gap-2 rounded-lg border bg-white p-4 shadow transition hover:shadow-md">
+          <h2 className="text-sm font-bold text-gray-700 flex items-center gap-2">
+            <FaThermometerHalf className="w-5 h-5 text-red-500" />
+            DHT Temp (°C)
+          </h2>
+          <SensorChart metric="dhtTemp" label="DHT Temp" />
+        </div>
+        <div className="flex flex-col gap-2 rounded-lg border bg-white p-4 shadow transition hover:shadow-md">
+          <h2 className="text-sm font-bold text-gray-700 flex items-center gap-2">
+            <FaThermometerHalf className="w-5 h-5 text-orange-500" />
+            LM35 Temp (°C)
+          </h2>
+          <SensorChart metric="lm35Temp" label="LM35 Temp" />
+        </div>
+        <div className="flex flex-col gap-2 rounded-lg border bg-white p-4 shadow transition hover:shadow-md">
+          <h2 className="text-sm font-bold text-gray-700 flex items-center gap-2">
+            <FaDroplet className="w-5 h-5 text-blue-500" />
+            Humidity (%)
+          </h2>
+          <DhtHumidityGauge />
+        </div>
+        <div className="flex flex-col gap-2 rounded-lg border bg-white p-4 shadow transition hover:shadow-md">
+          <h2 className="text-sm font-bold text-gray-700 flex items-center gap-2">
+            <FaLeaf className="w-5 h-5 text-emerald-600" />
+            Soil Moisture (%)
+          </h2>
+          <MoistureGauge />
+        </div>
+      </div>
+    </main>
   );
 }
