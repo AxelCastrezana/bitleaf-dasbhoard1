@@ -6,6 +6,8 @@ import { FaThermometerHalf } from "react-icons/fa";
 import { FaDroplet } from "react-icons/fa6";
 import { FaLeaf } from "react-icons/fa";
 import { FaArrowsRotate } from "react-icons/fa6";
+import Link from "next/link";
+
 
 import Image from "next/image";
 
@@ -28,22 +30,24 @@ export default function Home() {
 
           <div className="flex flex-1 items-center justify-end md:justify-between">
             <nav aria-label="Global" className="hidden md:block">
-            <ul className="flex items-center gap-6 text-sm">
-          <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75"> Monitoring Dashboard </a>
-          </li>
-          </ul>
-
+              <ul className="flex items-center gap-6 text-sm">
+                <li>
+                  <a className="text-gray-500 transition hover:text-gray-500/75">
+                    {" "}
+                    Monitoring Dashboard{" "}
+                  </a>
+                </li>
+              </ul>
             </nav>
 
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
-                <a
-                  className="block rounded-md bg-[#1E6E47] px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
+                <Link
                   href="/"
+                  className="block rounded-md bg-[#1E6E47] px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
                 >
-                   <FaArrowsRotate className="w-5 h-5 text-white-500" />
-                </a>
+                  <FaArrowsRotate className="w-5 h-5 text-white-500" />
+                </Link>
               </div>
 
               <button className="block rounded-sm bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
