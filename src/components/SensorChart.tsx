@@ -76,7 +76,6 @@ export default function SensorChart({ metric, label }: SensorChartProps) {
       id: `${metric}-chart`,
       animations: {
         enabled: true,
-        easing: "easeinout",
         speed: 500,
       },
     },
